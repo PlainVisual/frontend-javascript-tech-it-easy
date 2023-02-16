@@ -5,6 +5,7 @@ function TvSpecAll (arr) {
   const specsAllTv = arr.map((specs) => {
      return specs;
   })
+
   //  if statement waarbij wordt gekeken of de array leeg is. Is dit het geval dan krijg je een foutmelding
   if (!specsAllTv.length) {
 
@@ -50,5 +51,5 @@ return result;
 
 }
 
-
 export { TvSpecAll };
+

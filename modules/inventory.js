@@ -1,4 +1,4 @@
-// VOORRAAD ARRAY MET TV'S
+// VOORRAAD ARRAY MET TV'S - zelf img toegevoegd
 const inventory = [
   {
     type: '43PUS6504/12',
