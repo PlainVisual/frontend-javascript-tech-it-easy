@@ -1,7 +1,7 @@
 // Modules
 import { inventory } from "./inventory.js";
 import { tvSoldStock, tvStock, tvInStock } from "./stockamount.js";
-// import { handleTvSoldOut, handleTvAmbi, handleTvSortPrice } from "./btn-actions.js";
+import { handleTvSoldOut, handleTvAmbi, handleTvSortPrice } from "./btn-actions.js";
 import { TvSpecAll } from "./tv-instore-totall.js";
 // import { detailsTv, StoreDetails, dataInStore, priceTv, screenSizeTv, TvSpecification } from "./functions.js";
 
@@ -22,49 +22,49 @@ const tvCurrentStock = document.querySelector(".numb_current");
 tvCurrentStock.innerHTML =  `${tvInStock}`;
 // console.log(tvCurrentStock);
 
+
+// ------------------ Opdracht 4e Toon totale lijst TV's - zie tv-instore-total.js ------------------
+
+const tvTotal = document.querySelector(".content-list-tv");
+tvTotal.innerHTML = `${TvSpecAll(inventory)}`;
+
 // ------------------ Bonusopdracht sorteer laagste prijs -------------------
 
 const btnSortPrice = document.getElementById('btn-sort');
 
-function handleTvSortPrice(e) {
-  console.log(e.target);
-const sortedInventory = inventory.sort((a,b) => a.price - b.price);
-const sortedTvSpecs = TvSpecAll(sortedInventory);
-return tvTotal.innerHTML = `${sortedTvSpecs}`;
+function TvSortPrice() {
+  
+  handleTvSortPrice(inventory);
+  TvSpecAll(inventory);
+
 }
 
-btnSortPrice.addEventListener('click', handleTvSortPrice);
+btnSortPrice.addEventListener('click', TvSortPrice);
 
 // ------------------ Bonusopdracht selectie Ambilight TV -------------------
 
 const btnAmbi = document.getElementById('btn-ambi');
 
-function handleTvAmbi(e) {
-  console.log(e.target);
-  const sortedTvAmbi = inventory.filter((ambi) => ambi.options.ambiLight);
-  const sortedWithAmbi = TvSpecAll(sortedTvAmbi);
-  return tvTotal.innerHTML = `${sortedWithAmbi}`;
+function filterTvAmbi() {
+  
+  const ambiTv = handleTvAmbi(inventory);
+  TvSpecAll(ambiTv);
 
 }
 
-btnAmbi.addEventListener('click', handleTvAmbi);
+btnAmbi.addEventListener('click', filterTvAmbi);
 
-// ------------------ Bonusopdracht TV's uitverkocht -------------------
-
-function handleTvSoldOut(e) {
-  console.log(e.target);
-  const sortedTvSoldOut = inventory.filter((soldOut) => soldOut.originalStock - soldOut.sold === 0);
-  const sortedSoldOutTv = TvSpecAll(sortedTvSoldOut);
-  return tvTotal.innerHTML = `${sortedSoldOutTv}`;
-
-}
+// // ------------------ Bonusopdracht TV's uitverkocht -------------------
 
 const btnSoldOut = document.getElementById('btn-sold');
-btnSoldOut.addEventListener('click', handleTvSoldOut);
+function filterTvSoldOut() {
+  
+  const sortedSoldOut = handleTvSoldOut(inventory);
+  TvSpecAll(sortedSoldOut);
+
+}
+
+btnSoldOut.addEventListener('click', filterTvSoldOut);
 
 
-// ------------------ Opdracht 4e - zie tv-instore-total.js ------------------
 
-const tvTotal = document.querySelector(".content-list-tv");
-tvTotal.innerHTML = `${TvSpecAll(inventory)}`;
-// console.log(tvTotal);

@@ -33,7 +33,11 @@ function TvSpecAll (arr) {
       }
 
     //  Hier passen we de let result aan zodat we deze later kunnen returnen vanuit de functie en er een gehele overzicht wordt getoond van de resultaten in de console log.
-  result += `
+
+
+  
+   const tvTotal = document.querySelector(".content-list-tv");    
+   tvTotal.innerHTML = result += `
   <div class='list-wrapper'>
   <span><img class='tv-image' src="${specsAllTv[i].image}" alt="" /></span>
   <div class='tv-spec'>
@@ -45,7 +49,6 @@ function TvSpecAll (arr) {
     `;
    
 }
-
 
 return result;
 

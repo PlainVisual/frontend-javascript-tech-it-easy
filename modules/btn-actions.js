@@ -1,6 +1,3 @@
-import { inventory } from "./inventory.js";
-
-
 // ------------------ Opdracht 1a -------------------
 
 // const tvNamesType = inventory.map((tvtype) => tvtype.type);
@@ -8,11 +5,9 @@ import { inventory } from "./inventory.js";
 
 // ------------------ Opdracht 1b - tv's all sold-out -------------------
 
-function handleTvSoldOut() {
-  // console.log(e.target);
-  const tvSoldOut = inventory.filter((soldOut) => soldOut.originalStock - soldOut.sold === 0);
-
-  return tvSoldOut;
+function handleTvSoldOut(arr) {
+  
+ return arr.filter((soldOut) => soldOut.originalStock - soldOut.sold === 0);
 
 }
 
@@ -22,11 +17,9 @@ function handleTvSoldOut() {
 
 // filter-method geeft true - wil je false dan voeg je ! voor de variable toe
 
-function handleTvAmbi() {
+function handleTvAmbi(arr) {
   // console.log(e.target);
-  const tvAmbi = inventory.filter((ambi) => ambi.options.ambiLight);
-
-  return tvAmbi;
+  return arr.filter((ambi) => ambi.options.ambiLight);
 
 }
 
@@ -34,13 +27,13 @@ function handleTvAmbi() {
 
 // ------------------ Opdracht 1d - tv's sorting -------------------
 
-function handleTvSortPrice() {
+function handleTvSortPrice(arr) {
 
-const sortedTvPrice = inventory.sort((a,b) => a.price - b.price);
+arr.sort((a,b) => a.price - b.price);
 
-return sortedTvPrice
 }
 
-// console.table(handleTvSortPrice());
+
+// console.table(handleTvSortPrice(inventory));
 
 export { handleTvSoldOut, handleTvAmbi, handleTvSortPrice };
