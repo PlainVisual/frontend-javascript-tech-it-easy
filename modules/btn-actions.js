@@ -7,7 +7,7 @@
 
 function handleTvSoldOut(arr) {
   
- return arr.filter((soldOut) => soldOut.originalStock - soldOut.sold === 0);
+ return arr.filter((soldOut) => soldOut.originalStock === soldOut.sold);
 
 }
 

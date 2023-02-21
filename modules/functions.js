@@ -61,7 +61,7 @@ function dataInStore (arr) {
 
 // ---------------- Opdracht 3b - Functie om de value's per property uit te lezen ----------------------
 
-function StoreDetails (arr, object) {
+function storeDetails (arr, object) {
     
   const details = arr.map((inventoryObject) => {
 
