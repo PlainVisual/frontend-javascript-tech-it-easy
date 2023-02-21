@@ -1,9 +1,10 @@
-// VOORRAAD ARRAY MET TV'S
+// VOORRAAD ARRAY MET TV'S - zelf img toegevoegd
 const inventory = [
   {
     type: '43PUS6504/12',
     name: '4K TV',
     brand: 'Philips',
+    image: './assets/img/philips-43.png',
     price: 379,
     availableSizes: [43, 50, 58, 65],
     refreshRate: 50,
@@ -24,6 +25,7 @@ const inventory = [
     type: 'NH3216SMART',
     name: 'HD smart TV',
     brand: 'Nikkei',
+    image: './assets/img/nikkei.png',
     price: 159,
     availableSizes: [32],
     refreshRate: 100,
@@ -44,6 +46,7 @@ const inventory = [
     type: 'QE55Q60T',
     name: '4K QLED TV',
     brand: 'Samsung',
+    image: './assets/img/samsung.png',
     price: 709,
     availableSizes: [43, 50, 55, 58, 65],
     refreshRate: 60,
@@ -64,6 +67,7 @@ const inventory = [
     type: '43HAK6152',
     name: 'Ultra HD SMART TV',
     brand: 'Hitachi',
+    image: './assets/img/hitachi.png',
     price: 349,
     availableSizes: [43, 50, 55, 58],
     refreshRate: 60,
@@ -84,6 +88,7 @@ const inventory = [
     type: '50PUS7304/12',
     name: 'The One 4K TV',
     brand: 'Philips',
+    image: './assets/img/philips-50.png',
     price: 479,
     availableSizes: [43, 50, 55, 58, 65, 70],
     refreshRate: 50,
@@ -104,6 +109,7 @@ const inventory = [
     type: '55PUS7805',
     name: '4K LED TV',
     brand: 'Philips',
+    image: './assets/img/philips-55.png',
     price: 689,
     availableSizes: [55],
     refreshRate: 100,
@@ -124,6 +130,7 @@ const inventory = [
     type: 'B2450HD',
     name: 'LED TV',
     brand: 'Brandt',
+    image: './assets/img/brandt.png',
     price: 109,
     availableSizes: [24],
     refreshRate: 60,
@@ -144,6 +151,7 @@ const inventory = [
     type: '32WL1A63DG',
     name: 'HD TV',
     brand: 'Toshiba',
+    image: './assets/img/nikkei.png',
     price: 161,
     availableSizes: [32],
     refreshRate: 50,
@@ -160,4 +168,7 @@ const inventory = [
     originalStock: 10,
     sold: 8,
   },
+  
 ];
+
+export { inventory };
